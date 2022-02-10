@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const { listen } = require('express/lib/application')
 const app = express()
 const portNumber = process.env.PORT
 
@@ -14,6 +13,6 @@ app.get('*',(req, res)=>{
     res.status(404).send('<h1>404 Page not found</h1>')
 })
 
-listen(portNumber, () =>{
+app.listen(portNumber, () =>{
     console.log(`Listening to port ${portNumber}`);
 })
