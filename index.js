@@ -17,7 +17,7 @@ app.get('/', (req,res)=>{
 
 //route for all pages not handled by our routes.
 app.get('*',(req, res)=>{
-    res.status(404).send('<h1>404 Page not found</h1>')
+    res.status(404).render('error404')
 })
 
 //Starts Server on port
