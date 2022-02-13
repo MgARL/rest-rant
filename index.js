@@ -3,16 +3,24 @@ const express = require('express')
 const app = express()
 const portNumber = process.env.PORT
 
+//Starting express react views engine
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+// controllers
 app.use('/places', require('./controllers/places'))
 
+// homepage
 app.get('/', (req,res)=>{
-    res.send('Hello World')
+    res.render('home')
 })
 
+//route for all pages not handled by our routes.
 app.get('*',(req, res)=>{
     res.status(404).send('<h1>404 Page not found</h1>')
 })
 
+//Starts Server on port
 app.listen(portNumber, () =>{
     console.log(`Listening to port ${portNumber}`);
 })
