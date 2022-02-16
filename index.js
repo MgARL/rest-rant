@@ -3,11 +3,15 @@ const express = require('express')
 const app = express()
 const portNumber = process.env.PORT
 
+// Middleware
 //Starting express react views engine
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
+
+// Body parser
+app.use(express.urlencoded({ extended: true }))
 
 
 
