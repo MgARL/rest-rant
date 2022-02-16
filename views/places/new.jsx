@@ -4,30 +4,30 @@ const Def = require('../default')
 function new_form (){
     return(
         <Def>
-            <main>
-                <h1>Add New Place</h1>
-                <form action="/places" method="post">
+            <main className="container">
+                <h1 className="row">Add New Place</h1>
+                <form className="w-50" action="/places" method="post">
                     <div>
                         <label htmlFor="name">Place Name</label>
-                        <input id="name" name="name" required/>
+                        <input className="form-control" id="name" name="name" required/>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
-                        <input type="url" id="pic" name="pic" />
+                        <input className="form-control" type="url" id="pic" name="pic"/>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="city">City</label>
-                        <input id="city" name="city"/>
+                        <input className="form-control" id="city" name="city"/>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="state">State</label>
-                        <input id="state" name="state"/>
+                        <input className="form-control" id="state" name="state"/>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <label htmlFor="cuisines">Cuisines</label>
-                        <input id="cuisines" name="cuisines" required/>
+                        <input className="form-control" id="cuisines" name="cuisines" required/>
                     </div>
-                    <input type="submit" value="Add Place" />
+                    <input className="btn btn-primary" type="submit" value="Add Place" />
                 </form>
             </main>
         </Def>

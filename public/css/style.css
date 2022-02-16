@@ -11,3 +11,7 @@ img{
       height: 40vh;
       border-radius: 10px;
   }
+
+  form{
+    text-align: left;
+  }
