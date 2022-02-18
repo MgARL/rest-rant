@@ -6,7 +6,7 @@ function new_form (){
         <Def>
             <main className="container">
                 <h1 className="row">Add New Place</h1>
-                <form className="w-50" action="/places" method="post">
+                <form className="w-50" action="/places" method="POST">
                     <div>
                         <label htmlFor="name">Place Name</label>
                         <input className="form-control" id="name" name="name" required/>
