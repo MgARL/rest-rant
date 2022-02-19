@@ -1,6 +1,9 @@
 body{
   background-color: lightblue;
-    text-align: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 main{
   margin-right: 20px;
@@ -11,22 +14,49 @@ h1 {
     text-align: center;
     color: cornflowerblue;
   }
-  h2{
+  a > h3{
     color: lightblue;
   }
 
+  a > h3:hover{
+    color: rgb(78, 211, 245)
+  }
+
 img{
-      height: 40vh;
+      height: 350px;
       border-radius: 10px;
   }
 
   form{
     text-align: left;
   }
+ footer a{
+   text-decoration: none;
+   color: white;
+   font-size: 1.5em;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+   color:  rgb(252, 204, 132);
+  }
+
+  .white-big{
+    text-decoration: none;
+   color: white;
+   font-size: 1.5em;
+  }
 
   nav {
     background-color: cornflowerblue;
     padding: 10px;
+}
+
+footer{
+  background-color: cornflowerblue;
+  margin-top: auto;
+  height: 100px;
 }
 
 nav ul {
@@ -45,6 +75,13 @@ nav a {
 }
 
 nav a:hover {
-    color: pink;
+    color: rgb(252, 204, 132);
     text-decoration: none;
+}
+a > h2{
+  color: white;
+}
+a > h2:hover{
+  color: rgb(252, 204, 132);
+  text-decoration: none;
 }
