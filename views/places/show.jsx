@@ -21,14 +21,20 @@ function show (data) {
                             Located at {data.place.city}, {data.place.state}.<br/>
                             Experts in {data.place.cuisines} cuisines
                         </p>
-                         <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                             Edit
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-12 d-flex justify-content-center">
+                        <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+                            Edit
                         </a> 
-                    <form className='text-center mt-2' method='POST' action={`/places/${data.id}?_method=DELETE`}> 
-                        <button type="submit" className="btn btn-danger">
-                            Delete
-                        </button>
-                    </form>     
+                        <form className='text-center' method='POST' action={`/places/${data.id}?_method=DELETE`}> 
+                            <button type="submit" className="btn btn-danger mx-2">
+                                Delete
+                            </button>
+                        </form>     
+
+                        </div>
+
                     </div>
                 </div>
             </div>
