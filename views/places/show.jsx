@@ -35,7 +35,7 @@ function show (data) {
                                 <button type="submit" className="btn btn-danger mx-2">
                                     Delete <i class="bi bi-trash3"></i>
                                 </button>
-                            </form>     
+                            </form>
                         </div>
                     </div>
                 </div>

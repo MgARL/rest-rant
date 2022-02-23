@@ -12,6 +12,11 @@ function Home(){
                 Photo by <a href="https://unsplash.com/@mham3816?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Madie Hamilton</a> on <a href="https://unsplash.com/s/photos/steak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
                 </div>
             </div>
+            <div className="row">
+                <div className="col-sm-12 mb-3">
+                    <button className='btn btn-info'><a href="/places" className="text-light h3">Places! <i class="bi bi-shop"></i></a></button>
+                </div>
+            </div>
         </main>
     </Def>
    )
