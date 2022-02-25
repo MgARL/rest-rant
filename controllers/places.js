@@ -3,8 +3,7 @@ const db = require('../models')
 
 router.get('/', async (req, res) => {
   try {
-    let places = await db.Place.find()
-    console.log(places)
+    const places = await db.Place.find()
     res.render('places/index', { places })
   } catch (err) {
     console.error(err)
@@ -14,7 +13,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    let response = await db.Place.create(req.body)
+    const response = await db.Place.create(req.body)
     res.redirect('/places')
   } catch (err) {
     console.error(err)
@@ -28,7 +27,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-    let place = await db.Place.findById(req.params.id)
+    const place = await db.Place.findById(req.params.id)
     res.render('places/show', { place })
   } catch (err) {
     console.error(err)

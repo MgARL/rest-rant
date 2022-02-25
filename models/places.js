@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 const placeSchema = new Schema({
   name: {type: String, required: true},
-  pic: String,
+  pic: {type: String, default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OMUIoilPWpHpoXZwE6sz-3Miz8uK2nV9ELyfhdhQav1jpT0Fg0Qbrx92-CrpIUpAxdc&usqp=CAU'},
   cuisines:{type: String, required: true},
   city: {type: String, required: true},
   state: {type: String, required: true},
@@ -11,3 +11,5 @@ const placeSchema = new Schema({
 })
 
 module.exports = mongoose.model('Place', placeSchema)
+
+// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OMUIoilPWpHpoXZwE6sz-3Miz8uK2nV9ELyfhdhQav1jpT0Fg0Qbrx92-CrpIUpAxdc&usqp=CAU
