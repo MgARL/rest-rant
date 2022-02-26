@@ -9,6 +9,7 @@ function show (data) {
             <div className="row">
                 <div className="col-sm-6">
                 <img src={data.place.pic} alt={data.place.name}/>
+                <h3>Located at {data.place.city}, {data.place.state}.</h3>
                 </div>
                 <div className="col-sm-6">
                     <div className="row">
@@ -20,9 +21,9 @@ function show (data) {
                     <div className="row">
                         <div className="col-sm-12">
                             <h2>Description</h2>
+                            <h5>{data.place.showEstablished()}</h5>
                             <p>
-                                Located at {data.place.city}, {data.place.state}.<br/>
-                                Experts in {data.place.cuisines} cuisines
+                              Serving {data.place.cuisines}
                             </p>
                         </div>
                     </div>
