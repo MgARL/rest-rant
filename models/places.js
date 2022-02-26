@@ -7,7 +7,11 @@ const placeSchema = new Schema({
   cuisines:{type: String, required: true},
   city: {type: String, required: true},
   state: {type: String, required: true},
-  founded: Number
+  founded: {
+    type: Number,
+    min: [1673, 'Surely not that old'],
+    max: [new Date().getFullYear(), 'Hey, that year is in the future']
+  }
 })
 
 placeSchema.methods.showEstablished = function() {

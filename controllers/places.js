@@ -16,8 +16,19 @@ router.post('/', async (req, res) => {
     const response = await db.Place.create(req.body)
     res.redirect('/places')
   } catch (err) {
-    console.error(err)
-    res.render('error404')
+    if(err && err.name === 'ValidationError'){
+      let message = 'Validation Error: '
+      for (var field in err.errors){
+        message += `${field} was ${err.errors[field].value}. `
+        message += `${err.errors[field].message}`
+      }
+      console.log('Validation Error message:', message)
+      res.render('places/new', { message })
+    }else{
+      console.error(err)
+      res.render('error404')
+
+    }
   }
 })
 
