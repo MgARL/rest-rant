@@ -12,6 +12,10 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+  // default validation in mongoose not working if is an empty string.
+  if(req.body.pic ===''){
+    req.body.pic = undefined
+  }
   try {
     const response = await db.Place.create(req.body)
     res.redirect('/places')
@@ -23,7 +27,7 @@ router.post('/', async (req, res) => {
         message += `${err.errors[field].message}`
       }
       console.log('Validation Error message:', message)
-      res.render('places/new', { message })
+      res.render('places/new', { message: message, body: req.body })
     }else{
       console.error(err)
       res.render('error404')
