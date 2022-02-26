@@ -30,11 +30,11 @@ function show (data) {
                     <div className="row">
                         <div className="col-sm-12 d-flex justify-content-center">
                             <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                                Edit <i class="bi bi-pen"></i>
+                                Edit <i className="bi bi-pen"></i>
                             </a> 
                             <form className='text-center' method='POST' action={`/places/${data.id}?_method=DELETE`}> 
                                 <button type="submit" className="btn btn-danger mx-2">
-                                    Delete <i class="bi bi-trash3"></i>
+                                    Delete <i className="bi bi-trash3"></i>
                                 </button>
                             </form>
                         </div>
@@ -43,7 +43,7 @@ function show (data) {
             </div>
             <div className="row mt-5">
                 <div className="col-sm-12">
-                    <h2>Comments <i class="bi bi-chat-left-dots"></i></h2>
+                    <h2>Comments <i className="bi bi-chat-left-dots"></i></h2>
                     <p>no comments yet</p>
                 </div>
             </div>
