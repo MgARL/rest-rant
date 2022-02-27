@@ -11,7 +11,8 @@ const placeSchema = new Schema({
     type: Number,
     min: [1673, 'Surely not that old'],
     max: [new Date().getFullYear(), 'Hey, that year is in the future']
-  }
+  },
+  comments:[{type: Schema.Types.ObjectId, ref: 'Comment'}]
 })
 
 placeSchema.methods.showEstablished = function() {
