@@ -14,7 +14,7 @@ function Home(){
             </div>
             <div className="row">
                 <div className="col-sm-12 mb-3">
-                    <button className='btn btn-info'><a href="/places" className="text-light h3">Places! <i class="bi bi-shop"></i></a></button>
+                    <button className='btn btn-info'><a href="/places" className="text-light h3">Places! <i className="bi bi-shop"></i></a></button>
                 </div>
             </div>
         </main>
