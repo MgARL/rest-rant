@@ -10,7 +10,7 @@ function show ({ place }) {
     if(place.comments.length){
         comments = place.comments.map( comment => {
             return (
-                <div className="border">
+                <div className="col-sm-4 border">
                     <h3 className="rant">{comment.rant ? 'Rant! 😡': 'Rave: 😻'}</h3>
                     <h4>
                         <strong>- {comment.author}</strong>
@@ -62,8 +62,8 @@ function show ({ place }) {
             <div className="row mt-5">
                 <div className="col-sm-12">
                     <h2>Comments <i className="bi bi-chat-left-dots"></i></h2>
-                    {comments}
                 </div>
+                {comments}
             </div>
             <form className='border p-3' action={`${place.id}/rant`} method='POST'>
                 <div className="row mb-2">

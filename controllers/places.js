@@ -78,7 +78,7 @@ try {
   console.log('comment: ', comment)
   place.comments.push(comment.id)
   await place.save()
-  res.redirect(`${req.params.id}`)
+  res.redirect(`/places/${req.params.id}`)
   // res.send('hi')
   
 } catch (error) {
