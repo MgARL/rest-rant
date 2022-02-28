@@ -68,8 +68,8 @@ function show ({ place }) {
             <form className='border p-3' action={`${place.id}/rant`} method='POST'>
                 <div className="row mb-2">
                     <div className="col-sm-6">
-                        <label className='form-label' htmlFor="name">Your Name:</label>
-                        <input className="form-control" id="name" name="name"/>
+                        <label className='form-label' htmlFor="author">Your Name:</label>
+                        <input className="form-control" id="author" name="author"/>
                     </div>
                     <div className="col-sm-6">
                         <label className='form-label' htmlFor="rant">Is this Rant?</label><br></br>
@@ -85,7 +85,7 @@ function show ({ place }) {
                  <div className="row mb-2">
                     <div className="col-sm-12">
                         <label className='form-label' htmlFor="content">Comment: </label>
-                        <input className="form-control" type="text" id='content' minlength='3' maxlength="56"/>
+                        <input className="form-control" type="text" id='content' name='content' minLength='3'/>
                     </div>
 
                  </div>
@@ -94,7 +94,6 @@ function show ({ place }) {
                         <input className="form-control" type="submit" />
                     </div>
                 </div>
-
             </form>
           </main>
         </Def>

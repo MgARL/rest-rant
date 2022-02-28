@@ -66,8 +66,25 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // comments
-router.post('/:id/rant', (req, res) => {
-  res.send(req.body)
+router.post('/:id/rant', async (req, res) => {
+  let { body } = req
+
+  body.rant = body.rant ? true : false
+
+try {
+  let place = await db.Place.findById(req.params.id)
+  console.log('place: ', place)
+  const comment = await db.Comment.create(body)
+  console.log('comment: ', comment)
+  place.comments.push(comment.id)
+  await place.save()
+  res.redirect(`${req.params.id}`)
+  // res.send('hi')
+  
+} catch (error) {
+  console.log(error)
+  res.render('error404')
+}
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
