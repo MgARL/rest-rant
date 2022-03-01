@@ -53,16 +53,31 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+// edit handler
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
 })
 
+// delete request
 router.delete('/:id', (req, res) => {
   res.send('DELETE /places/:id stub')
 })
+
 // Edit Page
-router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+router.get('/:id/edit', async (req, res) => {
+  try {
+    let place = await db.Place.findById(req.params.id)
+     if (!place) {
+        res.render('error404')
+    }
+    else {
+      res.render('places/edit', { place: place })
+    }
+    
+  } catch (error) {
+    console.error(error)
+    res.send(error)
+  }
 })
 
 // comments

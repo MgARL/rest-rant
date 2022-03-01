@@ -59,6 +59,8 @@ function show ({ place }) {
                     </div>
                 </div>
             </div>
+
+            {/* Comments */}
             <div className="row mt-5">
                 <div className="col-sm-12">
                     <h2>Comments <i className="bi bi-chat-left-dots"></i></h2>
