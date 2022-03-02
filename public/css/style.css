@@ -85,3 +85,7 @@ a > h2:hover{
   color: rgb(252, 204, 132);
   text-decoration: none;
 }
+
+.bg-gray{
+  background-color: rgba(241, 248, 248, 0.815);
+}

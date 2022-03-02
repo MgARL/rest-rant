@@ -10,7 +10,7 @@ function show ({ place }) {
     if(place.comments.length){
         comments = place.comments.map( comment => {
             return (
-                <div className="col-sm-4 border">
+                <div className="col-sm-4 border bg-gray">
                     <h3 className="rant">{comment.rant ? 'Rant! 😡': 'Rave: 😻'}</h3>
                     <h4>
                         <strong>- {comment.author}</strong>
@@ -67,24 +67,26 @@ function show ({ place }) {
                 </div>
                 {comments}
             </div>
-            <form className='border p-3' action={`${place.id}/rant`} method='POST'>
-                <div className="row mb-2">
+
+
+            <form className='border mt-5 p-3 bg-gray' action={`${place.id}/rant`} method='POST'>
+                <div className="row mb-3">
                     <div className="col-sm-6">
                         <label className='form-label' htmlFor="author">Your Name:</label>
                         <input className="form-control" id="author" name="author"/>
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 text-center">
                         <label className='form-label' htmlFor="rant">Is this Rant?</label><br></br>
-                        <input type="checkbox" id='rant' name='rant'/>
+                        <input  type="checkbox" id='rant' name='rant'/>
                     </div>
                 </div>
-                <div className="row mb-2">
+                <div className="row mb-3">
                     <div className="col-sm-4">
-                        <label className='form-label' htmlFor="stars">Rating enter 1 to 5</label>
+                        <label className='form-label me-2' htmlFor="stars">Rating enter 1 to 5</label>
                         <input className="form-control-sm" type="number" id='stars' name='stars' min='1' max='5' step='0.5'/>
                     </div>
                 </div>
-                 <div className="row mb-2">
+                 <div className="row mb-3">
                     <div className="col-sm-12">
                         <label className='form-label' htmlFor="content">Comment: </label>
                         <input className="form-control" type="text" id='content' name='content' minLength='3'/>
