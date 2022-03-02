@@ -14,6 +14,8 @@ async function seed(){
             bolVar = false
         }else if( i % 2 === 0){
             bolVar = true
+        }else{
+            bolVar = false
         }
 
         let comment = await db.Comment.create({

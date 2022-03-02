@@ -54,13 +54,42 @@ router.get('/:id', async (req, res) => {
 })
 
 // edit handler
-router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+router.put('/:id', async (req, res) => {
+  // checking if pic is empty
+  const { body } = req
+  if(req.body.pic ===''){
+    req.body.pic = undefined
+  }
+
+  let paramID = req.params.id
+
+  try {
+   let place = await db.Place.findById(paramID)//getting doc from db
+  // assigning new data
+   place.name = body.name
+   place.pic = body.pic
+   place.state = body.state
+   place.cuisines = body.cuisines
+
+  //  Updating the doc in DB
+   await place.save()
+
+   res.redirect(`/places/${paramID}`)
+  } catch (error) {
+    res.redirect('error404')
+  }
 })
 
 // delete request
-router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+router.delete('/:id', async (req, res) => {
+  try {
+    await db.Place.deleteOne({ _id: req.params.id })
+    res.redirect('/places')
+    
+  } catch (error) {
+    res.redirect('error404')
+  }
+
 })
 
 // Edit Page
@@ -76,7 +105,7 @@ router.get('/:id/edit', async (req, res) => {
     
   } catch (error) {
     console.error(error)
-    res.send(error)
+    res.render('error404')
   }
 })
 
