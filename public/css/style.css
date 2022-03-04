@@ -23,7 +23,7 @@ h1 {
   }
 
 img{
-      height: 350px;
+      width: 100%;
       border-radius: 10px;
   }
 
@@ -92,4 +92,9 @@ a > h2:hover{
 
 .circle{
   border-radius: 10px;
+}
+
+.home-img {
+  height: 350px;
+  width: auto;
 }
