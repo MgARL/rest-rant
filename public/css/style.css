@@ -89,3 +89,7 @@ a > h2:hover{
 .bg-gray{
   background-color: rgba(241, 248, 248, 0.815);
 }
+
+.circle{
+  border-radius: 10px;
+}

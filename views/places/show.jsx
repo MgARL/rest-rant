@@ -1,4 +1,5 @@
 const React = require('react')
+const places = require('../../models/places')
 const Def = require('../default')
 
 function show ({ place }) {
@@ -38,6 +39,9 @@ function show ({ place }) {
                         <strong>- {comment.author}</strong>
                     </h4>
                     <p>{comment.content}</p>
+                    <form className='mb-2 text-end' action={`/places/${place.id}/comments/${comment.id}?_method=DELETE`} method="post">
+                        <input type="submit" className='btn btn-danger circle' value='Delete'/>
+                    </form>
                 </div>
             )
         })
