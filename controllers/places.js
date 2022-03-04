@@ -117,9 +117,7 @@ router.post('/:id/rant', async (req, res) => {
 
 try {
   let place = await db.Place.findById(req.params.id)
-  console.log('place: ', place)
   const comment = await db.Comment.create(body)
-  console.log('comment: ', comment)
   place.comments.push(comment.id)
   await place.save()
   res.redirect(`/places/${req.params.id}`)
