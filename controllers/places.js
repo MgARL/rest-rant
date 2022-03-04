@@ -64,15 +64,7 @@ router.put('/:id', async (req, res) => {
   let paramID = req.params.id
 
   try {
-   let place = await db.Place.findById(paramID)//getting doc from db
-  // assigning new data
-   place.name = body.name
-   place.pic = body.pic
-   place.state = body.state
-   place.cuisines = body.cuisines
-
-  //  Updating the doc in DB
-   await place.save()
+   let place = await db.Place.findByIdAndUpdate(paramID, req.body)//getting doc from db and updating it
 
    res.redirect(`/places/${paramID}`)
   } catch (error) {
@@ -83,10 +75,11 @@ router.put('/:id', async (req, res) => {
 // delete request
 router.delete('/:id', async (req, res) => {
   try {
-    await db.Place.deleteOne({ _id: req.params.id })
+    await db.Place.findByIdAndDelete(req.params.id)
     res.redirect('/places')
     
-  } catch (error) {
+  } catch (err) {
+    console.log(err)
     res.redirect('error404')
   }
 
@@ -96,12 +89,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
   try {
     let place = await db.Place.findById(req.params.id)
-     if (!place) {
-        res.render('error404')
-    }
-    else {
-      res.render('places/edit', { place: place })
-    }
+      res.render('places/edit', { place })
     
   } catch (error) {
     console.error(error)

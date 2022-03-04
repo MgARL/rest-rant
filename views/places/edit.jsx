@@ -27,9 +27,16 @@ function edit_form ( { place } ) {
                             <input className="form-control" id="state" name="state" defaultValue={place.state}/>
                         </div>
                     </div> 
-                    <div className="form-group d-flex flex-column align-items-center mb-3">
-                        <label htmlFor="cuisines">Cuisines<span className="text-danger">*</span></label>
-                        <input className="w-50 form-control" id="cuisines" name="cuisines" defaultValue={place.cuisines} required/>
+                    <div className="row">
+                        <div className="col-sm-6 mb-3">
+                            <label htmlFor="cuisines">Cuisines<span className="text-danger">*</span></label>
+                            <input className="form-control" id="cuisines" name="cuisines" defaultValue={place.cuisines} required/>
+                        </div>
+                        <div className="col-sm-6 form-group">
+                            <label htmlFor="founded">Founded Year</label>
+                            <input className="form-control" id="founded" name="founded" defaultValue={place.founded}/>
+                        </div>
+
                     </div>
                     <input className="btn btn-primary mb-4" type="submit" defaultValue="Update Place" />
                 </form>
